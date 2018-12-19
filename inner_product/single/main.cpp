@@ -16,25 +16,20 @@ int main()
   std::mt19937 engine(100);
   std::uniform_real_distribution<> dist1(0, 10);
 
-  ll n = 10000;
+  ll n = 1000;
 
-  int *a; int *b; int *result;
-  a = new int[n*n]; b = new int[n]; result = new int[n];
-
-  // int a[n*n], b[n], result[n];
+  int a[n*n], b[n], result[n];
   
   ll i;
 
   for (i = 0; i < n*n; i++)
   {
     a[i] = dist1(engine);
-    // std::cout << a[i] << std::endl;
   }
 
   for (i = 0; i < n; i++)
   {
     b[i] = dist1(engine);
-    // std::cout << b[i] << std::endl;
     result[i] = 0;
   }
 
@@ -52,10 +47,6 @@ int main()
   // 時間計測終了
   end = std::chrono::steady_clock::now();
   auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-  // for (int i = 0; i < n; i++)
-  //   std::cout << result[i] << ' ';
-  // std::cout << std::endl;
 
   std::cout << elapsed <<"ms"<< std::endl;
 }
