@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include <omp.h>
 
+#define ll long long
+
 int main()
 {
   // 時間計測開始
@@ -14,14 +16,14 @@ int main()
   std::mt19937 engine(100);
   std::uniform_real_distribution<> dist1(0, 10);
 
-  long long n = 10000;
+  ll n = 10000;
 
   int *a; int *b; int *result;
   a = new int[n*n]; b = new int[n]; result = new int[n];
 
   // int a[n*n], b[n], result[n];
   
-  int i;
+  ll i;
 
   for (i = 0; i < n*n; i++)
   {
